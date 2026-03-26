@@ -1,6 +1,7 @@
 def player():
     return {"health" : 100, "max_health": 100, "alive": True}
 
+
 def take_damage(player, amount):
     player["health"] = max(0, player["health"] - amount)
     if player["health"] == 0:
@@ -17,4 +18,3 @@ def heal(player, amount):
 
 def is_alive(player):
     return player["alive"] and player["health"] > 0
-

@@ -13,15 +13,18 @@ def test_take_damage_reduces_health():
     result = take_damage(player, 30)
     assert result["health"] == 70
 
+
 def test_take_damage_cannot_go_below_zero():
     player = make_player()
     result = take_damage(player, 999)
     assert result["health"] == 0
 
+
 def test_take_damage_kills_player_at_zero():
     player = make_player()
     result = take_damage(player, 100)
     assert result["alive"] == False
+
 
 def test_take_damage_by_zero():
     player = make_player()
@@ -37,10 +40,12 @@ def test_heal_increases_health():
     result = heal(player, 20)
     assert result["health"] == 80
 
+
 def test_heal_cannot_exceed_max_health():
     player = make_player(health=90)
     result = heal(player, 50)
     assert result["health"] == 100
+
 
 def test_heal_does_nothing_when_dead():
     player = make_player(health=0, alive=False)
@@ -55,9 +60,11 @@ def test_is_alive_returns_true_when_healthy():
     player = make_player()
     assert is_alive(player) == True
 
+
 def test_is_alive_returns_false_when_dead():
     player = make_player(health=0, alive=False)
     assert is_alive(player) == False
+
 
 def test_is_alive_returns_false_at_zero_health():
     player = make_player(health=0, alive=False)
