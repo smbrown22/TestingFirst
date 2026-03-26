@@ -11,4 +11,5 @@ def test_take_damage(player):
 
 def test_player_dies(player):
     result = take_damage(player, 100)
-    assert result["alive"] == False
+    assert result["alive"] is False
+
