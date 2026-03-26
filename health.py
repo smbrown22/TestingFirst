@@ -1,5 +1,5 @@
 def player():
-    return {"health":100, "max_health":100, "alive":True}
+    return {"health": 100, "max_health": 100, "alive": True}
 
 
 def take_damage(player, amount):
