@@ -25,3 +25,6 @@ jobs:
       
       - name: Run tests
         run: pytest
+
+      - name: Enforce 85% Coverage
+        run: pytest --cov=. --cov-fail-under=85
