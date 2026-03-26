@@ -1,5 +1,4 @@
-from score import * 
-
+import add_points, apply_multiplier, reset_score, is_high_score
 def test_add_points():
     game = {"score": 0, "multiplier": 1, "active": True}
     add_points(game, 10)

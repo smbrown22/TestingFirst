@@ -1,15 +1,18 @@
 inventory = {
-    "items":    [],           # list of item name strings
-    "capacity": 10,          # maximum number of items allowed
-    "locked":   False        # if True, inventory cannot be modified
+    "items": [],
+    "capacity": 10,
+    "locked": False,
 }
 
+
 def add_item(inventory, item):
-    if len(items) > capacity:
-        raise ValueError
-    elif item == "":
-        raise ValueError 
-    elif locked:
-        raise ValueError 
-    
-    
+    if inventory["locked"]:
+        raise ValueError("Inventory is locked")
+
+    if item == "":
+        raise ValueError("Item cannot be empty")
+
+    if len(inventory["items"]) >= inventory["capacity"]:
+        raise ValueError("Inventory is full")
+
+    inventory["items"].append(item)

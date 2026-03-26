@@ -1,5 +1,5 @@
 import pytest
-from health import take_damage, heal, is_alive
+from health import take_damage
 
 @pytest.fixture
 def player():
